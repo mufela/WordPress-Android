@@ -57,7 +57,7 @@ public class ApiHelperTest extends InstrumentationTestCase {
     }
 
     // This test failed before #773 was fixed
-    public void testRefreshBlogContent() throws InterruptedException {
+   /* public void testRefreshBlogContent() throws InterruptedException {
         XMLRPCFactoryTest.setPrefixAllInstances("malformed-software-version");
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         Blog dummyBlog = new Blog("", "", "");
@@ -77,10 +77,10 @@ public class ApiHelperTest extends InstrumentationTestCase {
             }
         }).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, false);
         countDownLatch.await(5000, TimeUnit.SECONDS);
-    }
+    }*/
 
     // This test failed before #799 was fixed
-    public void testRefreshBlogContentEmptyResponse() throws InterruptedException {
+    /*public void testRefreshBlogContentEmptyResponse() throws InterruptedException {
         XMLRPCFactoryTest.setPrefixAllInstances("empty");
         final CountDownLatch countDownLatch = new CountDownLatch(1);
         Blog dummyBlog = new Blog("", "", "");
@@ -100,7 +100,7 @@ public class ApiHelperTest extends InstrumentationTestCase {
             }
         }).executeOnExecutor(AsyncTask.SERIAL_EXECUTOR, false);
         countDownLatch.await(5000, TimeUnit.SECONDS);
-    }
+    }*/
 
     public void testSpamSpammedComment() {
         XMLRPCFactoryTest.sMode = XMLRPCFactoryTest.Mode.CUSTOMIZABLE_XML;

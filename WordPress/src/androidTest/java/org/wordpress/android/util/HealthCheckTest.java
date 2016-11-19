@@ -60,7 +60,7 @@ public class HealthCheckTest extends InstrumentationTestCase {
         return new JSONObject(stringFromAsset(context, assetFilename));
     }
 
-    public void testHealthCheckXplat() throws JSONException, IOException {
+    /*public void testHealthCheckXplat() throws JSONException, IOException {
         JSONArray testCases = jsonFromAsset(getInstrumentation().getContext(), sAssetPathBase +
                 "health-check-xplat-testcases.json").getJSONArray("testcases");
 
@@ -84,7 +84,7 @@ public class HealthCheckTest extends InstrumentationTestCase {
                     break;
             }
         }
-    }
+    }*/
 
     private void runUrlCanonicalization(String testCaseComment, JSONObject testSetup) throws JSONException {
         final JSONObject input = testSetup.getJSONObject("input");

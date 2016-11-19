@@ -51,3 +51,6 @@ WordPress/src/androidTest/monkeys/*.png
 buck-cache/
 buck-out/
 extlibs/
+
+WordPress/build
+

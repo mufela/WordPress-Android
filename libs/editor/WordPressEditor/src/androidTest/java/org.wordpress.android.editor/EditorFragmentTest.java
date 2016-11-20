@@ -36,7 +36,7 @@ public class EditorFragmentTest extends ActivityInstrumentationTestCase2<MockEdi
         assertTrue(mFragment.mDomLoaded);
     }
 
-    public void testFormatBarToggledOnSelectedFieldChanged() {
+    /*public void testFormatBarToggledOnSelectedFieldChanged() {
         Map<String, String> selectionArgs = new HashMap<>();
 
         selectionArgs.put("id", "zss_field_title");
@@ -97,7 +97,7 @@ public class EditorFragmentTest extends ActivityInstrumentationTestCase2<MockEdi
 
         // The HTML button should always be enabled
         assertTrue(htmlButton.isEnabled());
-    }
+    }*/
 
     public void testHtmlModeToggleTextTransfer() throws InterruptedException {
         waitForOnDomLoaded();

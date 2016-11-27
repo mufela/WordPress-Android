@@ -19,10 +19,6 @@ env:
       - ANDROID_SDKS=android-14
       - ANDROID_TARGET=android-14
 
-install:
-  # Setup gradle.properties
-  - cp WordPress/gradle.properties
-
 script:
   - ./gradlew clean assembleDebug
   - ./gradlew check connectedCheck

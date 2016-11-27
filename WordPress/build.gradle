@@ -43,6 +43,10 @@ android {
       vectorDrawables.useSupportLibrary = true
    }
 
+   lintOptions {
+      abortOnError false
+   }
+
    productFlavors {
       vanilla {} // used for release and beta
 
@@ -69,9 +73,6 @@ android {
          buildConfigField "String", "APP_PN_KEY", "\"org.wordpress.android.debug.build\""
          ext.enableCrashlytics = false
       }
-   }
-   lintOptions {
-      abortOnError false
    }
 
 }

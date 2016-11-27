@@ -12,7 +12,21 @@ android:
     - android-24
     - sys-img-x86-android-23
 
-install: true
+env:
+   global:
+      - MALLOC_ARENA_MAX=2
+      - GRADLE_OPTS="-XX:MaxPermSize=4g -Xmx4g"
+      - ANDROID_SDKS=android-14
+      - ANDROID_TARGET=android-14
+
+
+before_install:
+  # TODO: Remove the following line when Travis' platform-tools are updated to v25+
+  - echo yes | android update sdk -a --filter platform-tools --no-ui --force
+
+install:
+  # Setup gradle.properties
+  - cp WordPress/gradle.properties-example WordPress/gradle.properties
 
 script:
   - ./gradlew clean assembleDebug

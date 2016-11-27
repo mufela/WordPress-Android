@@ -1,0 +1,19 @@
+language: android
+jdk: oraclejdk8
+
+android:
+  components:
+    - extra-google-m2repository
+    - extra-android-m2repository
+    - extra-android-support
+    - platform-tools
+    - tools
+    - build-tools-24.0.2
+    - android-24
+    - sys-img-x86-android-23
+
+install: true
+
+script:
+  - ./gradlew clean assembleDebug
+  - ./gradlew check connectedCheck

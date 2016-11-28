@@ -16,4 +16,4 @@ android:
 
 script:
   - ./gradlew clean assembleDebug
-  - ./gradlew check 
+  - ./gradlew check

@@ -4,15 +4,20 @@ sudo: required
 
 android:
   components:
-    - extra-google-m2repository
-    - extra-android-m2repository
     - extra-android-support
-    - platform-tools
     - tools
     - build-tools-24.0.2
     - android-24
     - sys-img-x86-android-24
     - sys-img-armeabi-v7a-android-24
+
+
+before_install:
+  - echo yes | android update sdk -a --filter platform-tools --no-ui --force
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
 
 script:
   - ./gradlew clean assembleDebug

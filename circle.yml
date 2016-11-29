@@ -5,11 +5,6 @@ dependencies:
 
 test:
   override:
-    - emulator -avd circleci-android24 -no-audio -no-window:
-        background: true
-        parallel: true
-    - circle-android wait-for-boot
-    # run tests  against the emulator.
     - ./gradlew clean assmebleDebug
     # copy the build outputs to artifacts
-    - ./gradlew check connectedCheck
+    - ./gradlew check

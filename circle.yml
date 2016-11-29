@@ -1,10 +1,11 @@
+dependencies:
+  pre:
+    - echo y | android update sdk --no-ui --all --filter android-24
 test:
   override:
-    # start the emulator
     - emulator -avd circleci-android24 -no-audio -no-window:
         background: true
         parallel: true
-    # wait for it to have booted
     - circle-android wait-for-boot
     # run tests  against the emulator.
     - ./gradlew clean assmebleDebug

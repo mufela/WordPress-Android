@@ -7,4 +7,4 @@ test:
   override:
     - ./gradlew clean assembleDebug
     # copy the build outputs to artifacts
-    - ./gradlew check
+    - ./gradlew check || (grep -A20 -B2 'severity="Error"' WordPress/build/outputs/lint-results-vanillaDebug.xml; exit 1)

@@ -14,7 +14,7 @@ android:
 
 before_install:
   - echo yes | android update sdk -a --filter platform-tools --no-ui --force
-  
+
 script:
   - ./gradlew clean assembleDebug
   - ./gradlew check || (grep -A20 -B2 'severity="Error"' WordPress/build/outputs/lint-results-vanillaDebug.xml; exit 1)

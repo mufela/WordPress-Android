@@ -5,7 +5,8 @@ dependencies:
 
 test:
   override:
-    - ./gradlew clean assembleDebug
+    - ./gradlew clean assembleDebug:
+        timeout: 1000
     # copy the build outputs to artifacts
     - ./gradlew check || (grep -A20 -B2 'severity="Error"' WordPress/build/outputs/lint-results-vanillaDebug.xml; exit 1):
         timeout: 1000

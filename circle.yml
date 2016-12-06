@@ -12,9 +12,14 @@ dependencies:
     - echo y | android update sdk --no-ui --all --filter build-tools-24.0.2
 
 test:
+  pre:
+    - emulator -avd circleci-android17 -no-audio -no-window:
+        background: true
+        parallel: true
+    - circle-android wait-for-boot
   override:
     - ./gradlew clean assembleVanillaDebug -PdisablePreDex:
         timeout: 1000
     # copy the build outputs to artifacts
-    - ./gradlew check || (grep -A20 -B2 'severity="Error"' WordPress/build/outputs/lint-results-vanillaDebug.xml; exit 1):
+    - ./gradlew connectedCheck || (grep -A20 -B2 'severity="Error"' WordPress/build/outputs/lint-results-vanillaDebug.xml; exit 1):
         timeout: 1000
